@@ -22,3 +22,23 @@ def test_guest_should_see_login_link(browser):
     page = ProductPage(browser,  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019.")
     page.open()
     page.should_be_bucket_link()
+
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    page = ProductPage(browser,  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0")
+    page.open()
+    page.add_product_to_bucket()
+    page.solve_quiz_and_get_code()
+    page.book_was_added_tab()
+
+def test_guest_cant_see_success_message(browser):
+    page = ProductPage(browser, "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0")
+    page.open()
+    page.book_was_added_tab()
+
+
+def test_message_disappeared_after_adding_product_to_basket(browser):
+    page = ProductPage(browser, "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0")
+    page.open()
+    page.add_product_to_bucket()
+    page.solve_quiz_and_get_code()
+    page.book_tab_disappeared()

@@ -11,3 +11,4 @@ class BucketPageLocators():
     BENEFIT_PRICE = (By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong")
     BOOK_NAME_SHOP = (By.CSS_SELECTOR, "#content_inner > article > div.row > div.col-sm-6.product_main > h1")
     BOOK_NAME_BENEFIT = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div > strong ")
+    BOOK_ADDED = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
