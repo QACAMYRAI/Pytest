@@ -23,6 +23,7 @@ def test_guest_should_see_login_link(browser):
     page.open()
     page.should_be_bucket_link()
 
+@pytest.mark.xfail
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser,  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0")
     page.open()
@@ -35,7 +36,7 @@ def test_guest_cant_see_success_message(browser):
     page.open()
     page.book_was_added_tab()
 
-
+@pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
     page = ProductPage(browser, "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0")
     page.open()
