@@ -6,9 +6,6 @@ from selenium.common.exceptions import NoAlertPresentException
 import math
 
 
-from ..conftest import browser
-
-
 class ProductPage(BasePage):
     def add_product_to_bucket(self):
         busket_link = self.browser.find_element(*BucketPageLocators.BACKET_LINK)
