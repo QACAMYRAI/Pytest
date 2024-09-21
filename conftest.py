@@ -1,4 +1,5 @@
 import pytest
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -14,6 +15,7 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="function")
+@allure.title("Prepare for the test")
 def browser(request):
     test_type = request.config.getoption("--test_type")
     browser_name = request.config.getoption("--browser_name")
