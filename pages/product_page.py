@@ -1,6 +1,4 @@
-from Tools.scripts.make_ctype import values
 from .base_page import BasePage
-from selenium.webdriver.common.by import By
 from .locators import BucketPageLocators
 from selenium.common.exceptions import NoAlertPresentException
 import math
@@ -19,7 +17,7 @@ class ProductPage(BasePage):
         x = alert.text.split(" ")[2]
         answer = str(math.log(abs((12 * math.sin(float(x))))))
         alert.send_keys(answer)
-        alert.accept()
+        alert.accept()  
         try:
             alert = self.browser.switch_to.alert
             alert_text = alert.text

@@ -6,7 +6,7 @@ from selenium.common.exceptions import TimeoutException
 class BasePage:
 
 
-    def __init__(self, browser, url, timeout = 10):
+    def __init__(self, browser, url, timeout = 5):
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
